@@ -51,8 +51,13 @@
 		A0FA03432AC6DB7E0004AFA5 /* SahaYatri */ = {
 			isa = PBXGroup;
 			children = (
-				A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */,
-				A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */,
+				A0FA03582AC6DBBC0004AFA5 /* Data */,
+				A0FA03572AC6DBAE0004AFA5 /* Model */,
+				A0FA03562AC6DBA60004AFA5 /* Utilities */,
+				A0FA03552AC6DBA10004AFA5 /* Sound */,
+				A0FA03542AC6DB9A0004AFA5 /* Extension */,
+				A0FA03532AC6DB950004AFA5 /* View */,
+				A0FA03522AC6DB8E0004AFA5 /* App */,
 				A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */,
 				A0FA034A2AC6DB7F0004AFA5 /* Preview Content */,
 			);
@@ -65,6 +70,57 @@
 				A0FA034B2AC6DB7F0004AFA5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0FA03522AC6DB8E0004AFA5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */,
+				A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A0FA03532AC6DB950004AFA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0FA03542AC6DB9A0004AFA5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A0FA03552AC6DBA10004AFA5 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		A0FA03562AC6DBA60004AFA5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A0FA03572AC6DBAE0004AFA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0FA03582AC6DBBC0004AFA5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
