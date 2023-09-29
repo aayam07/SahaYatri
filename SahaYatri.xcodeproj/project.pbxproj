@@ -11,6 +11,12 @@
 		A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */; };
 		A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */; };
 		A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA034B2AC6DB7F0004AFA5 /* Preview Assets.xcassets */; };
+		A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03592AC6DE620004AFA5 /* MapView.swift */; };
+		A0FA035E2AC6E29C0004AFA5 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA035D2AC6E29C0004AFA5 /* CodableBundleExtension.swift */; };
+		A0FA03602AC6E3410004AFA5 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = A0FA035F2AC6E3410004AFA5 /* locations.json */; };
+		A0FA03622AC6E3AB0004AFA5 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03612AC6E3AB0004AFA5 /* LocationModel.swift */; };
+		A0FA03642AC6EA3F0004AFA5 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03632AC6EA3F0004AFA5 /* LocationView.swift */; };
+		A0FA036B2AC6EE510004AFA5 /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA036A2AC6EE510004AFA5 /* NewLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FA034B2AC6DB7F0004AFA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0FA03592AC6DE620004AFA5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A0FA035D2AC6E29C0004AFA5 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
+		A0FA035F2AC6E3410004AFA5 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		A0FA03612AC6E3AB0004AFA5 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		A0FA03632AC6EA3F0004AFA5 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		A0FA03672AC6EDE30004AFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A0FA036A2AC6EE510004AFA5 /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 		A0FA03432AC6DB7E0004AFA5 /* SahaYatri */ = {
 			isa = PBXGroup;
 			children = (
+				A0FA03672AC6EDE30004AFA5 /* Info.plist */,
 				A0FA03582AC6DBBC0004AFA5 /* Data */,
 				A0FA03572AC6DBAE0004AFA5 /* Model */,
 				A0FA03562AC6DBA60004AFA5 /* Utilities */,
@@ -77,6 +91,9 @@
 			children = (
 				A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */,
 				A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */,
+				A0FA03592AC6DE620004AFA5 /* MapView.swift */,
+				A0FA03632AC6EA3F0004AFA5 /* LocationView.swift */,
+				A0FA036A2AC6EE510004AFA5 /* NewLocationView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -91,6 +108,7 @@
 		A0FA03542AC6DB9A0004AFA5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A0FA035D2AC6E29C0004AFA5 /* CodableBundleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 		A0FA03572AC6DBAE0004AFA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A0FA03612AC6E3AB0004AFA5 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 		A0FA03582AC6DBBC0004AFA5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A0FA035F2AC6E3410004AFA5 /* locations.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -182,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */,
+				A0FA03602AC6E3410004AFA5 /* locations.json in Resources */,
 				A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,7 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */,
+				A0FA03642AC6EA3F0004AFA5 /* LocationView.swift in Sources */,
+				A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */,
 				A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */,
+				A0FA03622AC6E3AB0004AFA5 /* LocationModel.swift in Sources */,
+				A0FA036B2AC6EE510004AFA5 /* NewLocationView.swift in Sources */,
+				A0FA035E2AC6E29C0004AFA5 /* CodableBundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +352,9 @@
 				DEVELOPMENT_TEAM = 985R44ND7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SahaYatri/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to track you";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to track you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -355,6 +384,9 @@
 				DEVELOPMENT_TEAM = 985R44ND7P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SahaYatri/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to track you";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to track you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
