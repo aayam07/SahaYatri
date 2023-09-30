@@ -5,6 +5,8 @@
     "image" : "map-serengeti",
     "latitude" : 27.8234,
     "longitude" : 85.8333333,
+    "arrival-time": 7,
+    "traffic": "high",
     "coordinates": [{
         "latitude" : 27.8234,
         "longitude" : 85.8333333,
@@ -36,34 +38,44 @@
     "name" : "Sajha",
     "image" : "map-kruger",
     "latitude" : 27.7234,
-    "longitude" : 85.9333333
+    "longitude" : 85.9333333,
+    "arrival-time": 11,
+    "traffic": "low"
   },
   {
     "id" : "3",
     "name" : "Ghumgham",
     "image" : "map-chobe",
     "latitude" : 27.6234,
-    "longitude" : 85.4292148
+    "longitude" : 85.4292148,
+    "arrival-time": 10,
+    "traffic": "high"
   },
   {
     "id" : "4",
     "name" : "KUBus",
     "image" : "map-kidepo",
     "latitude" : 27.8495757,
-    "longitude" : 85.7525049
+    "longitude" : 85.7525049,
+    "arrival-time": 9,
+    "traffic": "mild"
   },
   {
     "id" : "5",
     "name" : "IOE",
     "image" : "map-etosha",
     "latitude" : 27.8555909,
-    "longitude" : 85.327131
+    "longitude" : 85.327131,
+    "arrival-time": 20,
+    "traffic": "high"
   },
   {
     "id" : "6",
     "name" : "Butwal",
     "image" : "map-solonga",
     "latitude" : 27.9999932,
-    "longitude" : 85.0002492
+    "longitude" : 85.0002492,
+    "arrival-time": 2,
+    "traffic": "high"
   }
 ]

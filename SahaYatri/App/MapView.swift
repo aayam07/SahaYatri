@@ -19,88 +19,107 @@ struct MapView: View {
     
     @State private var searchFieldIsAnimating: Bool = false
     
+    @State private var isInfoPannelVisible: Bool = false
+    
     // USING SWIFT CLOSURE TO PREPARE MAP REGION TO DISPLAY
-        @State private var region: MKCoordinateRegion = {
-
-            var mapCoordinates = CLLocationCoordinate2D(latitude: 27.7172, longitude: 85.3240)
-            
-            var mapZoomLevel = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
-            
-            var mapRegion = MKCoordinateRegion(center: mapCoordinates, span: mapZoomLevel)
-            
-            return mapRegion
-        }()  // CLOSURE
+    @State private var region: MKCoordinateRegion = {
+        
+        var mapCoordinates = CLLocationCoordinate2D(latitude: 27.7172, longitude: 85.3240)
+        
+        var mapZoomLevel = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        
+        var mapRegion = MKCoordinateRegion(center: mapCoordinates, span: mapZoomLevel)
+        
+        return mapRegion
+    }()  // CLOSURE
     
-     let locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
+    let locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
     
-//    // test
-//    let mayurLocations: [ChangingBusLocation] = Bundle.main.decode("changinglocations.json")
+    //    // test
+    //    let mayurLocations: [ChangingBusLocation] = Bundle.main.decode("changinglocations.json")
     
-     var searchedLocations: [BusLocation] = []
+    var searchedLocations: [BusLocation] = []
     
-//     FUNCTION
+    //     FUNCTION
     mutating func matchLocationSearch() {
-
+        
         for location in locations {
             if location.name.uppercased() == busSearchText.uppercased() {
                 searchedLocations.append(location)
-
+                
             }
         }
-
+        
     }
     
     
     //MARK: - BODY
     var body: some View {
-
-            //        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
+        
+        //        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
         Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
-                        
-                        MapAnnotation(coordinate: item.locationCoordinates, content: {
-                                        MapAnnotationView(location: item)
-                                
-                                    })
-
-                    })  //: MAP
-                    .overlay (
-                        HStack {
-                            TextField("Search Bus Name", text: $busSearchText)
-                                .foregroundColor(.accentColor)
-                                .font(.system(size: 24, weight: .bold, design: .rounded))
-                                .padding()
-                                .background(
-                                    Color(UIColor.tertiarySystemBackground)
-                                )
-                                .cornerRadius(10)
-                                .padding()
-                                
-                            
-                            Button {
-                                // Some Action
-//                                matchLocationSearch()
-                            } label: {
-                                Image(systemName: "bus")
-                                    .foregroundColor(.black)
-                                    .font(.title)
-                            }
-                            .padding(.trailing, 20)
-
-                        }  //: HSTACK
-                            .offset(y: searchFieldIsAnimating ? -300 : 0)
-                        
-                    )
-                    .onAppear {
-                        withAnimation(.spring()) {
-                            searchFieldIsAnimating = true
-                        }
-                        
+            
+            MapAnnotation(coordinate: item.locationCoordinates, content: {
+                MapAnnotationView(location: item)
+                    .onTapGesture {
+                        isInfoPannelVisible = true
                     }
-        
+                
+            })
+            
+        })  //: MAP
+        .overlay (
+            
+                HStack {
+                    TextField("Search Bus Name", text: $busSearchText)
+                        .foregroundColor(.accentColor)
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .padding()
+                        .background(
+                            Color(UIColor.tertiarySystemBackground)
+                        )
+                        .cornerRadius(10)
+                        .padding()
+                    
+                    
+                    Button {
+                        // Some Action
+                        //                                matchLocationSearch()
+                    } label: {
+                        Image(systemName: "bus")
+                            .foregroundColor(.black)
+                            .font(.title)
+                    }
+                    .padding(.trailing, 20)
+                    
+                }  //: HSTACK
+//                    .offset(y: searchFieldIsAnimating ? -300 : 0)
+                , alignment: .top
+        )
+        .overlay (
+            BusDetailView()
+                .padding(.vertical, 12) // provides padding to the content i.e background
+                .padding(.horizontal, 16) // provides padding to the content i.e background
+                .background(
+                    Color.white
+                        .cornerRadius(8)
+                        .opacity(1)
+                )
+                .padding()  // provides padding to the outside the whole HStack
+                .opacity(isInfoPannelVisible ? 1 : 0)
+            , alignment: .bottom
+                
+        )
+//        .onAppear {
+//            withAnimation(.spring()) {
+//                searchFieldIsAnimating = true
+//            }
+//
+//        }
     }
-        
     
-    }
+    
+}
 
 
 //MARK: - PREVIEW

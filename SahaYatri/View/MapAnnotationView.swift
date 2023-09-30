@@ -41,6 +41,10 @@ struct MapAnnotationView: View {
                     Circle()
                         .stroke(Color.accentColor, lineWidth: 2)
                 )
+//                .onTapGesture {
+//                    // BUS INFO PANNEL
+////                    BusDetailView(location: self.location)
+//                }
                 
         }  //: ZSTACK
         .onAppear {

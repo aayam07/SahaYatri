@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		A08DB3F22AC777AE00D2CD89 /* changinglocations.json in Resources */ = {isa = PBXBuildFile; fileRef = A08DB3F12AC777AE00D2CD89 /* changinglocations.json */; };
 		A08DB3F42AC7781300D2CD89 /* ChangingBusLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3F32AC7781300D2CD89 /* ChangingBusLocationModel.swift */; };
+		A08DB3F62AC815B100D2CD89 /* BusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */; };
 		A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */; };
 		A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */; };
 		A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */; };
 		A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA034B2AC6DB7F0004AFA5 /* Preview Assets.xcassets */; };
 		A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03592AC6DE620004AFA5 /* MapView.swift */; };
 		A0FA035E2AC6E29C0004AFA5 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA035D2AC6E29C0004AFA5 /* CodableBundleExtension.swift */; };
-		A0FA03602AC6E3410004AFA5 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = A0FA035F2AC6E3410004AFA5 /* locations.json */; };
 		A0FA036B2AC6EE510004AFA5 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA036A2AC6EE510004AFA5 /* LocationView.swift */; };
 		A0FA036D2AC71E450004AFA5 /* LocationManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA036C2AC71E450004AFA5 /* LocationManagerExtension.swift */; };
 		A0FA036F2AC71EB90004AFA5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA036E2AC71EB90004AFA5 /* LocationManager.swift */; };
@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		A08DB3F12AC777AE00D2CD89 /* changinglocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = changinglocations.json; sourceTree = "<group>"; };
 		A08DB3F32AC7781300D2CD89 /* ChangingBusLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingBusLocationModel.swift; sourceTree = "<group>"; };
+		A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDetailView.swift; sourceTree = "<group>"; };
 		A0FA03412AC6DB7E0004AFA5 /* SahaYatri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SahaYatri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SahaYatriApp.swift; sourceTree = "<group>"; };
 		A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		A0FA034B2AC6DB7F0004AFA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0FA03592AC6DE620004AFA5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A0FA035D2AC6E29C0004AFA5 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
-		A0FA035F2AC6E3410004AFA5 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		A0FA03672AC6EDE30004AFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A0FA036A2AC6EE510004AFA5 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		A0FA036C2AC71E450004AFA5 /* LocationManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerExtension.swift; sourceTree = "<group>"; };
@@ -123,6 +123,7 @@
 				A0FA03722AC739080004AFA5 /* StartButtonView.swift */,
 				A0FA03762AC74C730004AFA5 /* CircleGroupView.swift */,
 				A0FA037C2AC75BB70004AFA5 /* MapAnnotationView.swift */,
+				A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 		A0FA03582AC6DBBC0004AFA5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A0FA035F2AC6E3410004AFA5 /* locations.json */,
 				A0FA03782AC758060004AFA5 /* buseslocation.json */,
 				A08DB3F12AC777AE00D2CD89 /* changinglocations.json */,
 			);
@@ -231,7 +231,6 @@
 				A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */,
 				A0FA03792AC758060004AFA5 /* buseslocation.json in Resources */,
 				A08DB3F22AC777AE00D2CD89 /* changinglocations.json in Resources */,
-				A0FA03602AC6E3410004AFA5 /* locations.json in Resources */,
 				A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +247,7 @@
 				A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */,
 				A0FA03732AC739080004AFA5 /* StartButtonView.swift in Sources */,
 				A0FA037B2AC759750004AFA5 /* BusLocationModel.swift in Sources */,
+				A08DB3F62AC815B100D2CD89 /* BusDetailView.swift in Sources */,
 				A0FA036D2AC71E450004AFA5 /* LocationManagerExtension.swift in Sources */,
 				A0FA03752AC7477E0004AFA5 /* HomeView.swift in Sources */,
 				A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */,
