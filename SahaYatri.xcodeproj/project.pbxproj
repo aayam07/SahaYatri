@@ -16,6 +16,10 @@
 		A08DB3FF2AC8528300D2CD89 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3FE2AC8528300D2CD89 /* LogInView.swift */; };
 		A08DB4012AC87BDF00D2CD89 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB4002AC87BDF00D2CD89 /* UserDetailView.swift */; };
 		A08DB4042AC8870100D2CD89 /* CustomGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB4032AC8870100D2CD89 /* CustomGroupBoxStyle.swift */; };
+		A08DB4072AC88D6000D2CD89 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A08DB4052AC88D5F00D2CD89 /* chimeup.mp3 */; };
+		A08DB4082AC88D6000D2CD89 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A08DB4062AC88D6000D2CD89 /* success.m4a */; };
+		A08DB40A2AC88DEB00D2CD89 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB4092AC88DEB00D2CD89 /* AudioPlayer.swift */; };
+		A08DB40C2AC88F3900D2CD89 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB40B2AC88F3900D2CD89 /* MessageView.swift */; };
 		A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */; };
 		A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */; };
 		A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		A08DB3FE2AC8528300D2CD89 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		A08DB4002AC87BDF00D2CD89 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		A08DB4032AC8870100D2CD89 /* CustomGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupBoxStyle.swift; sourceTree = "<group>"; };
+		A08DB4052AC88D5F00D2CD89 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		A08DB4062AC88D6000D2CD89 /* success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success.m4a; sourceTree = "<group>"; };
+		A08DB4092AC88DEB00D2CD89 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A08DB40B2AC88F3900D2CD89 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		A0FA03412AC6DB7E0004AFA5 /* SahaYatri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SahaYatri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SahaYatriApp.swift; sourceTree = "<group>"; };
 		A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 				A0FA03762AC74C730004AFA5 /* CircleGroupView.swift */,
 				A0FA037C2AC75BB70004AFA5 /* MapAnnotationView.swift */,
 				A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */,
+				A08DB40B2AC88F3900D2CD89 /* MessageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +173,8 @@
 		A0FA03552AC6DBA10004AFA5 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				A08DB4052AC88D5F00D2CD89 /* chimeup.mp3 */,
+				A08DB4062AC88D6000D2CD89 /* success.m4a */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 		A0FA03562AC6DBA60004AFA5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A08DB4092AC88DEB00D2CD89 /* AudioPlayer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -259,6 +271,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08DB4072AC88D6000D2CD89 /* chimeup.mp3 in Resources */,
+				A08DB4082AC88D6000D2CD89 /* success.m4a in Resources */,
 				A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */,
 				A0FA03792AC758060004AFA5 /* buseslocation.json in Resources */,
 				A08DB3FD2AC8503800D2CD89 /* GoogleService-Info.plist in Resources */,
@@ -278,6 +292,7 @@
 				A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */,
 				A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */,
 				A0FA03732AC739080004AFA5 /* StartButtonView.swift in Sources */,
+				A08DB40C2AC88F3900D2CD89 /* MessageView.swift in Sources */,
 				A08DB4012AC87BDF00D2CD89 /* UserDetailView.swift in Sources */,
 				A0FA037B2AC759750004AFA5 /* BusLocationModel.swift in Sources */,
 				A08DB3F62AC815B100D2CD89 /* BusDetailView.swift in Sources */,
@@ -286,6 +301,7 @@
 				A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */,
 				A08DB4042AC8870100D2CD89 /* CustomGroupBoxStyle.swift in Sources */,
 				A08DB3F42AC7781300D2CD89 /* ChangingBusLocationModel.swift in Sources */,
+				A08DB40A2AC88DEB00D2CD89 /* AudioPlayer.swift in Sources */,
 				A0FA036F2AC71EB90004AFA5 /* LocationManager.swift in Sources */,
 				A0FA036B2AC6EE510004AFA5 /* LocationView.swift in Sources */,
 				A0FA03772AC74C730004AFA5 /* CircleGroupView.swift in Sources */,

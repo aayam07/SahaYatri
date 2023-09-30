@@ -24,6 +24,9 @@ struct MapView: View {
     
     @State private var isInfoPannelVisible: Bool = false
     
+    // to create heptic feedback when the user taps on a vehicle icon
+    let hepticFeedback = UIImpactFeedbackGenerator(style: .medium)
+    
     // USING SWIFT CLOSURE TO PREPARE MAP REGION TO DISPLAY
     @State private var region: MKCoordinateRegion = {
         
@@ -101,7 +104,6 @@ struct MapView: View {
                     
                 } //: HSTACK
                 .padding()
-                .foregroundColor(.black)
                 
 //                Spacer(minLength: 80)
                 
@@ -112,7 +114,11 @@ struct MapView: View {
                         MapAnnotation(coordinate: item.locationCoordinates, content: {
                             MapAnnotationView(location: item)
                                 .onTapGesture {
-                                    isInfoPannelVisible = true
+                                    withAnimation(.spring()) {
+                                        hepticFeedback.impactOccurred()
+                                        isInfoPannelVisible = true
+                                    }
+                                    
                                 }
                             
                         })

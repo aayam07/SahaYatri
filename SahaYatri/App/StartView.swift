@@ -66,6 +66,7 @@ struct StartView: View {
                 Button {
                     DispatchQueue.main.async {
                         withAnimation(.linear(duration: 0.5)) {
+                            playSound(sound: "success", type: "m4a")
                             isOnboardingViewActive = false
                         }
                     }
