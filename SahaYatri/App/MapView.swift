@@ -11,9 +11,18 @@ import CoreLocation
 
 struct MapView: View {
     //MARK: - PROPERTIES
+    
+    // Location Manager Object
+    @StateObject var locationManager = LocationManager()
+    
+    @State private var busSearchText: String = ""
+    
+    @State private var searchFieldIsAnimating: Bool = false
+    
     // USING SWIFT CLOSURE TO PREPARE MAP REGION TO DISPLAY
         @State private var region: MKCoordinateRegion = {
-            var mapCoordinates = CLLocationCoordinate2D(latitude: 27.625349, longitude: 85.556061)
+
+            var mapCoordinates = CLLocationCoordinate2D(latitude: 27.7172, longitude: 85.3240)
             
             var mapZoomLevel = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
             
@@ -22,35 +31,75 @@ struct MapView: View {
             return mapRegion
         }()  // CLOSURE
     
-    let locations: [NationalParkLocation] = Bundle.main.decode("locations.json")
+     let locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
     
-    var locationManager = CLLocationManager()
+//    // test
+//    let mayurLocations: [ChangingBusLocation] = Bundle.main.decode("changinglocations.json")
     
-    //MARK: - FUNCTIONS
-    func requestForDeviceLocation() {
-        locationManager.requestWhenInUseAuthorization()
+     var searchedLocations: [BusLocation] = []
+    
+//     FUNCTION
+    mutating func matchLocationSearch() {
+
+        for location in locations {
+            if location.name.uppercased() == busSearchText.uppercased() {
+                searchedLocations.append(location)
+
+            }
+        }
+
     }
     
     
     //MARK: - BODY
     var body: some View {
-        
-        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
+
+            //        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
         Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
-             
+                        
                         MapAnnotation(coordinate: item.locationCoordinates, content: {
-                            // SwiftUI view to display as an Annotation
-                            Image(systemName: "pin.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 32, height: 32, alignment: .center)
-                        })  //: ANNOTATION
-            
-        })  //: MAP
+                                        MapAnnotationView(location: item)
+                                
+                                    })
+
+                    })  //: MAP
+                    .overlay (
+                        HStack {
+                            TextField("Search Bus Name", text: $busSearchText)
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 24, weight: .bold, design: .rounded))
+                                .padding()
+                                .background(
+                                    Color(UIColor.tertiarySystemBackground)
+                                )
+                                .cornerRadius(10)
+                                .padding()
+                                
+                            
+                            Button {
+                                // Some Action
+//                                matchLocationSearch()
+                            } label: {
+                                Image(systemName: "bus")
+                                    .foregroundColor(.black)
+                                    .font(.title)
+                            }
+                            .padding(.trailing, 20)
+
+                        }  //: HSTACK
+                            .offset(y: searchFieldIsAnimating ? -300 : 0)
+                        
+                    )
+                    .onAppear {
+                        withAnimation(.spring()) {
+                            searchFieldIsAnimating = true
+                        }
+                        
+                    }
         
     }
-
-            
+        
+    
     }
 
 

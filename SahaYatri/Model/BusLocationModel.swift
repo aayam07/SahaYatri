@@ -1,14 +1,14 @@
 //
-//  LocationModel.swift
+//  BusLocationModel.swift
 //  SahaYatri
 //
-//  Created by Aayam Adhikari on 29/09/2023.
+//  Created by Aayam Adhikari on 30/09/2023.
 //
 
 import Foundation
 import MapKit
 
-struct NationalParkLocation: Codable, Identifiable {
+struct BusLocation: Codable, Identifiable {
     let id: String
     let name: String
     let image: String

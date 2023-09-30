@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("onBoarding") var isOnboardingViewActive: Bool = true
+    
     var body: some View {
-        TabView {
-            MapView()
-                .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("Location")
-                }
-            
-            NewLocationView()
-                .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("Current")
-                }
-        }  //: TAB VIEW
+        ZStack {
+            if isOnboardingViewActive {
+                StartView()
+            } else {
+                HomeView()
+            }
+        }
     }
 }
 

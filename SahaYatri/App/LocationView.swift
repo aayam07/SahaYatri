@@ -1,35 +1,36 @@
-////
-////  LocationView.swift
-////  SahaYatri
-////
-////  Created by Aayam Adhikari on 29/09/2023.
-////
 //
-//import SwiftUI
+//  LocationView.swift
+//  SahaYatri
 //
-//struct LocationView: View {
-//    @ObservedObject private var locationManager = LocationManager()
+//  Created by Aayam Adhikari on 29/09/2023.
 //
-//    var body: some View {
-//        VStack {
-//                    if let location = locationManager.currentLocation {
-//                        Text("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
-//                    } else {
-//                        Text("Fetching location...")
-//                    }
-//
-//                    Button(action: {
-//                        locationManager.requestLocation()
-//                    }) {
-//                        Text("Get Location")
-//                    }
-//                }
-//                .padding()
-//    }
-//}
-//
-//struct LocationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocationView()
-//    }
-//}
+
+import SwiftUI
+import CoreLocation
+
+struct LocationView: View {
+    @StateObject var locationManager = LocationManager()
+    
+    @AppStorage("onBoarding") var isOnboardingViewActive: Bool = false
+
+       var body: some View {
+           VStack {
+               Text(locationManager.location != nil ? "\(locationManager.location!.coordinate.latitude), \(locationManager.location!.coordinate.longitude)" : "Loading...")
+               
+               Button {
+                   // ACTION
+                   isOnboardingViewActive = true
+               } label: {
+                   Text("Button")
+               }
+           }
+          
+
+       }
+}
+
+struct LocationView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocationView()
+    }
+}
