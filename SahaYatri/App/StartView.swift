@@ -56,8 +56,6 @@ struct StartView: View {
                         .opacity(isAnimating ? 1 : 0)
                         .animation(.easeOut(duration: 0.5), value: isAnimating)
                         
-                    
-                    
                 } //: CENTER
                 
                 
@@ -66,7 +64,14 @@ struct StartView: View {
                 //MARK: - FOOTER
                 
                 Button {
-                    isOnboardingViewActive = false
+                    DispatchQueue.main.async {
+                        withAnimation(.linear(duration: 0.5)) {
+                            isOnboardingViewActive = false
+                        }
+                    }
+                    
+                    
+                    
                 } label: {
                     HStack(spacing: 8) {
                         Text("Start")

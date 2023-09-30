@@ -8,9 +8,12 @@
 import SwiftUI
 import MapKit
 import CoreLocation
+import Firebase
 
 struct MapView: View {
     //MARK: - PROPERTIES
+    
+    @AppStorage("onBoarding") var isOnboardingViewActive: Bool = false
     
     // Location Manager Object
     @StateObject var locationManager = LocationManager()
@@ -56,60 +59,119 @@ struct MapView: View {
     //MARK: - BODY
     var body: some View {
         
-        //        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
-        Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
+        Group {
             
-            MapAnnotation(coordinate: item.locationCoordinates, content: {
-                MapAnnotationView(location: item)
-                    .onTapGesture {
-                        isInfoPannelVisible = true
-                    }
+            VStack {
+                //MARK: - HEADER
                 
-            })
-            
-        })  //: MAP
-        .overlay (
-            
-                HStack {
-                    TextField("Search Bus Name", text: $busSearchText)
+                HStack(spacing: 10) {
+                    // TITLE
+                    Text("Saha Yatri.")
+                        .font(.system(.largeTitle, design: .rounded, weight: .heavy))
                         .foregroundColor(.accentColor)
-                        .font(.system(size: 24, weight: .bold, design: .rounded))
-                        .padding()
-                        .background(
-                            Color(UIColor.tertiarySystemBackground)
-                        )
-                        .cornerRadius(10)
-                        .padding()
+                        .padding(.leading, 4)
                     
+                    Spacer()
                     
+                    // LogOut BUTTON
                     Button {
-                        // Some Action
-                        //                                matchLocationSearch()
+                        // Logout action
+                        do {
+                            try Auth.auth().signOut()
+                            
+                            // Show start page when user logs out
+                            isOnboardingViewActive = true
+                            
+                            
+                        } catch let signOutError as NSError {
+                            print("Error signing out: %@", signOutError)
+                        }
                     } label: {
-                        Image(systemName: "bus")
-                            .foregroundColor(.black)
-                            .font(.title)
+                        Text("Log Out")
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
+                            .background(
+                                Capsule()
+                                    .fill(Color.accentColor)
+//                                        .stroke(Color.white, lineWidth: 2)
+                            )
                     }
-                    .padding(.trailing, 20)
                     
-                }  //: HSTACK
-//                    .offset(y: searchFieldIsAnimating ? -300 : 0)
-                , alignment: .top
-        )
-        .overlay (
-            BusDetailView()
-                .padding(.vertical, 12) // provides padding to the content i.e background
-                .padding(.horizontal, 16) // provides padding to the content i.e background
-                .background(
-                    Color.white
-                        .cornerRadius(8)
-                        .opacity(1)
-                )
-                .padding()  // provides padding to the outside the whole HStack
-                .opacity(isInfoPannelVisible ? 1 : 0)
-            , alignment: .bottom
+                } //: HSTACK
+                .padding()
+                .foregroundColor(.black)
                 
-        )
+//                Spacer(minLength: 80)
+                
+                Group {
+                    //        //MARK: - MAP WITH ANNOTATIONS (ADVANCED MAP)
+                    Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
+                        
+                        MapAnnotation(coordinate: item.locationCoordinates, content: {
+                            MapAnnotationView(location: item)
+                                .onTapGesture {
+                                    isInfoPannelVisible = true
+                                }
+                            
+                        })
+                        
+                    })  //: MAP
+//                    .edgesIgnoringSafeArea(.all)
+                    .overlay (
+                        
+                        GroupBox {
+                            HStack {
+                                    TextField("Search Bus Name", text: $busSearchText)
+                                        .foregroundColor(.accentColor)
+                                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                                        .padding()
+                                        .background(
+                                            Color(UIColor.tertiarySystemBackground)
+                                        )
+                                        .cornerRadius(10)
+//                                        .padding()
+                                    
+                                    
+                                    Button {
+                                        // Some Action
+                                        //                                matchLocationSearch()
+                                    } label: {
+                                        Image(systemName: "magnifyingglass.circle.fill")
+                                            .foregroundColor(Color("InfoTextColor"))
+                                            .font(.largeTitle)
+                                    }
+//                                    .padding(.trailing, 20)
+                                    
+                            }  //: HSTACK
+                            .opacity(1)
+                        } //: GROUP BOX
+                            .groupBoxStyle(AccentColorGroupBoxStyle())
+            //                    .offset(y: searchFieldIsAnimating ? -300 : 0)
+                            , alignment: .top
+                    )
+                    .overlay (
+                        BusDetailView()
+                            .padding(.vertical, 12) // provides padding to the content i.e background
+                            .padding(.horizontal, 16) // provides padding to the content i.e background
+                            .background(
+                                Color.white
+                                    .cornerRadius(8)
+                                    .opacity(1)
+                            )
+                            .padding()  // provides padding to the outside the whole HStack
+                            .opacity(isInfoPannelVisible ? 1 : 0)
+                        , alignment: .bottom
+                            
+                    )
+                }  //: GROUP
+                
+            }
+            
+        }
+        
+        
 //        .onAppear {
 //            withAnimation(.spring()) {
 //                searchFieldIsAnimating = true

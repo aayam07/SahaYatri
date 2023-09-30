@@ -10,6 +10,12 @@
 		A08DB3F22AC777AE00D2CD89 /* changinglocations.json in Resources */ = {isa = PBXBuildFile; fileRef = A08DB3F12AC777AE00D2CD89 /* changinglocations.json */; };
 		A08DB3F42AC7781300D2CD89 /* ChangingBusLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3F32AC7781300D2CD89 /* ChangingBusLocationModel.swift */; };
 		A08DB3F62AC815B100D2CD89 /* BusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */; };
+		A08DB3F92AC84CFF00D2CD89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A08DB3F82AC84CFF00D2CD89 /* FirebaseAuth */; };
+		A08DB3FB2AC84CFF00D2CD89 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A08DB3FA2AC84CFF00D2CD89 /* FirebaseFirestore */; };
+		A08DB3FD2AC8503800D2CD89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A08DB3FC2AC8503800D2CD89 /* GoogleService-Info.plist */; };
+		A08DB3FF2AC8528300D2CD89 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB3FE2AC8528300D2CD89 /* LogInView.swift */; };
+		A08DB4012AC87BDF00D2CD89 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB4002AC87BDF00D2CD89 /* UserDetailView.swift */; };
+		A08DB4042AC8870100D2CD89 /* CustomGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB4032AC8870100D2CD89 /* CustomGroupBoxStyle.swift */; };
 		A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */; };
 		A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */; };
 		A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FA03482AC6DB7F0004AFA5 /* Assets.xcassets */; };
@@ -32,6 +38,10 @@
 		A08DB3F12AC777AE00D2CD89 /* changinglocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = changinglocations.json; sourceTree = "<group>"; };
 		A08DB3F32AC7781300D2CD89 /* ChangingBusLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingBusLocationModel.swift; sourceTree = "<group>"; };
 		A08DB3F52AC815B100D2CD89 /* BusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDetailView.swift; sourceTree = "<group>"; };
+		A08DB3FC2AC8503800D2CD89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A08DB3FE2AC8528300D2CD89 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		A08DB4002AC87BDF00D2CD89 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		A08DB4032AC8870100D2CD89 /* CustomGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupBoxStyle.swift; sourceTree = "<group>"; };
 		A0FA03412AC6DB7E0004AFA5 /* SahaYatri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SahaYatri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FA03442AC6DB7E0004AFA5 /* SahaYatriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SahaYatriApp.swift; sourceTree = "<group>"; };
 		A0FA03462AC6DB7E0004AFA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,12 +67,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08DB3F92AC84CFF00D2CD89 /* FirebaseAuth in Frameworks */,
+				A08DB3FB2AC84CFF00D2CD89 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A08DB4022AC886C200D2CD89 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				A08DB4032AC8870100D2CD89 /* CustomGroupBoxStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		A0FA03382AC6DB7E0004AFA5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				A0FA03672AC6EDE30004AFA5 /* Info.plist */,
+				A08DB3FC2AC8503800D2CD89 /* GoogleService-Info.plist */,
 				A0FA03582AC6DBBC0004AFA5 /* Data */,
 				A0FA03572AC6DBAE0004AFA5 /* Model */,
+				A08DB4022AC886C200D2CD89 /* Style */,
 				A0FA03562AC6DBA60004AFA5 /* Utilities */,
 				A0FA03552AC6DBA10004AFA5 /* Sound */,
 				A0FA03542AC6DB9A0004AFA5 /* Extension */,
@@ -113,6 +135,8 @@
 				A0FA036A2AC6EE510004AFA5 /* LocationView.swift */,
 				A0FA03702AC737FA0004AFA5 /* StartView.swift */,
 				A0FA03742AC7477E0004AFA5 /* HomeView.swift */,
+				A08DB3FE2AC8528300D2CD89 /* LogInView.swift */,
+				A08DB4002AC87BDF00D2CD89 /* UserDetailView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -186,6 +210,10 @@
 			dependencies = (
 			);
 			name = SahaYatri;
+			packageProductDependencies = (
+				A08DB3F82AC84CFF00D2CD89 /* FirebaseAuth */,
+				A08DB3FA2AC84CFF00D2CD89 /* FirebaseFirestore */,
+			);
 			productName = SahaYatri;
 			productReference = A0FA03412AC6DB7E0004AFA5 /* SahaYatri.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +242,9 @@
 				Base,
 			);
 			mainGroup = A0FA03382AC6DB7E0004AFA5;
+			packageReferences = (
+				A08DB3F72AC84CFF00D2CD89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = A0FA03422AC6DB7E0004AFA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +261,7 @@
 			files = (
 				A0FA034C2AC6DB7F0004AFA5 /* Preview Assets.xcassets in Resources */,
 				A0FA03792AC758060004AFA5 /* buseslocation.json in Resources */,
+				A08DB3FD2AC8503800D2CD89 /* GoogleService-Info.plist in Resources */,
 				A08DB3F22AC777AE00D2CD89 /* changinglocations.json in Resources */,
 				A0FA03492AC6DB7F0004AFA5 /* Assets.xcassets in Resources */,
 			);
@@ -246,16 +278,19 @@
 				A0FA03472AC6DB7E0004AFA5 /* ContentView.swift in Sources */,
 				A0FA035A2AC6DE620004AFA5 /* MapView.swift in Sources */,
 				A0FA03732AC739080004AFA5 /* StartButtonView.swift in Sources */,
+				A08DB4012AC87BDF00D2CD89 /* UserDetailView.swift in Sources */,
 				A0FA037B2AC759750004AFA5 /* BusLocationModel.swift in Sources */,
 				A08DB3F62AC815B100D2CD89 /* BusDetailView.swift in Sources */,
 				A0FA036D2AC71E450004AFA5 /* LocationManagerExtension.swift in Sources */,
 				A0FA03752AC7477E0004AFA5 /* HomeView.swift in Sources */,
 				A0FA03452AC6DB7E0004AFA5 /* SahaYatriApp.swift in Sources */,
+				A08DB4042AC8870100D2CD89 /* CustomGroupBoxStyle.swift in Sources */,
 				A08DB3F42AC7781300D2CD89 /* ChangingBusLocationModel.swift in Sources */,
 				A0FA036F2AC71EB90004AFA5 /* LocationManager.swift in Sources */,
 				A0FA036B2AC6EE510004AFA5 /* LocationView.swift in Sources */,
 				A0FA03772AC74C730004AFA5 /* CircleGroupView.swift in Sources */,
 				A0FA035E2AC6E29C0004AFA5 /* CodableBundleExtension.swift in Sources */,
+				A08DB3FF2AC8528300D2CD89 /* LogInView.swift in Sources */,
 				A0FA037D2AC75BB70004AFA5 /* MapAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +498,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A08DB3F72AC84CFF00D2CD89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A08DB3F82AC84CFF00D2CD89 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A08DB3F72AC84CFF00D2CD89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A08DB3FA2AC84CFF00D2CD89 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A08DB3F72AC84CFF00D2CD89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A0FA03392AC6DB7E0004AFA5 /* Project object */;
 }

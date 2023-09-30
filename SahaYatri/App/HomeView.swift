@@ -9,19 +9,27 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView {
-            MapView()
-                .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("Home")
-                }
-            
-            LocationView()
-                .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("Location")
-                }
-        }
+//        TabView {
+//            MapView()
+//                .tabItem {
+//                    Image(systemName: "square.grid.2x2")
+//                    Text("Home")
+//                }
+//
+////            LocationView()
+////                .tabItem {
+////                    Image(systemName: "square.grid.2x2")
+////                    Text("Location")
+////                }
+////
+////            UserDetailView()
+////                .tabItem {
+////                    Image(systemName: "person.fill")
+////                    Text("Profile")
+////                }
+//        } //: TAB
+        
+        MapView()
     }
 }
 

@@ -35,7 +35,8 @@ struct MapAnnotationView: View {
             Image(systemName: "bus.doubledecker.fill")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 48, height: 48)
+                .font(.footnote)
+                .frame(width: 43, height: 43)
                 .clipShape(Circle())
                 .overlay(
                     Circle()
