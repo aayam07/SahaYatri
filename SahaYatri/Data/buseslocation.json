@@ -5,7 +5,7 @@
     "image" : "map-serengeti",
     "latitude" : 27.8234,
     "longitude" : 85.8333333,
-    "arrival-time": 7,
+    "arrivaltime": 7,
     "traffic": "high",
     "coordinates": [{
         "latitude" : 27.8234,
@@ -39,7 +39,7 @@
     "image" : "map-kruger",
     "latitude" : 27.7234,
     "longitude" : 85.9333333,
-    "arrival-time": 11,
+    "arrivaltime": 11,
     "traffic": "low"
   },
   {
@@ -48,7 +48,7 @@
     "image" : "map-chobe",
     "latitude" : 27.6234,
     "longitude" : 85.4292148,
-    "arrival-time": 10,
+    "arrivaltime": 10,
     "traffic": "high"
   },
   {
@@ -57,7 +57,7 @@
     "image" : "map-kidepo",
     "latitude" : 27.8495757,
     "longitude" : 85.7525049,
-    "arrival-time": 9,
+    "arrivaltime": 9,
     "traffic": "mild"
   },
   {
@@ -66,7 +66,7 @@
     "image" : "map-etosha",
     "latitude" : 27.8555909,
     "longitude" : 85.327131,
-    "arrival-time": 20,
+    "arrivaltime": 20,
     "traffic": "high"
   },
   {
@@ -75,7 +75,7 @@
     "image" : "map-solonga",
     "latitude" : 27.9999932,
     "longitude" : 85.0002492,
-    "arrival-time": 2,
+    "arrivaltime": 2,
     "traffic": "high"
   }
 ]

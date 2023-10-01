@@ -12,6 +12,21 @@ struct UserDetailView: View {
     //MARK: - PRPOERTY
     @AppStorage("onBoarding") var isOnboardingViewActive: Bool = false
     
+    let user = Auth.auth().currentUser
+    
+    // to display vehicle info
+    let localVehicles: [String] = ["Mayur","Sajha", "Ghumgham", "KUBus", "IOE", "Minerals"]
+    let govVehicles: [String] = ["KTM Municipility", "Butwal Municipility", "Dhulikhel Municipility"]
+    
+    func getCurrentUserEmail() -> String {
+        var email: String = ""
+        if let user = user {
+            // User is logged in
+            email = user.email!
+        }
+        return email
+    }
+    
     //MARK: - BODY
     var body: some View {
         NavigationStack {
@@ -59,11 +74,28 @@ struct UserDetailView: View {
                     .padding()
                     .foregroundColor(.black)
                     
-                    Spacer(minLength: 80)
+//                    Spacer(minLength: 80)
                     
-                    GroupBox {
-                        
+                    ScrollView(.vertical, showsIndicators: false) {
+                        Group {
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("""
+                                Welcome,
+                                \(getCurrentUserEmail()) 👋
+                                """)
+                                .font(.largeTitle)
+                                .foregroundColor(Color("InfoTextColor"))
+                                
+                                
+                                VehicleInfoView(headerText: "Local Vehicles", vehicle: localVehicles)
+                                
+                                VehicleInfoView(headerText: "Government Vehicles", vehicle: govVehicles)
+                            }
+                            
+                        }
+                        .padding()
                     }
+                    
                 }
             } //: ZSTACK
         }  //: NAVIGATION

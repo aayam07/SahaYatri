@@ -1,0 +1,23 @@
+[
+  {
+    "id" : "1",
+    "name" : "KTM Municipility",
+    "image" : "map-serengeti",
+    "latitude" : 27.8234,
+    "longitude" : 85.8333333
+  },
+  {
+    "id" : "2",
+    "name" : "Butwal Municipility",
+    "image" : "map-kruger",
+    "latitude" : 27.7234,
+    "longitude" : 85.9333333
+  },
+  {
+    "id" : "3",
+    "name" : "Dhulikhel Municipility",
+    "image" : "map-chobe",
+    "latitude" : 27.6234,
+    "longitude" : 85.4292148
+  }
+]

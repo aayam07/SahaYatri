@@ -11,6 +11,9 @@ struct BusDetailView: View {
     //MARK: - PROPERTY
     
 //    var location: BusLocation
+    var locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
+    
+//    @Binding var showInfoPannel: Bool
     
     //MARK: - BODY
     var body: some View {
@@ -30,7 +33,7 @@ struct BusDetailView: View {
                     
                     Spacer()
                     
-                    Text("Mayur")
+                    Text(locations.randomElement()?.name ?? "Mayur")
                         .font(.footnote)
                         .foregroundColor(Color("InfoTextColor"))
                 }
@@ -45,7 +48,7 @@ struct BusDetailView: View {
                     
                     Spacer()
                     
-                    Text("7 minutes")
+                    Text("7")
                         .font(.footnote)
                         .foregroundColor(Color("InfoTextColor"))
                 }
@@ -60,7 +63,7 @@ struct BusDetailView: View {
                     
                     Spacer()
                     
-                    Text("High")
+                    Text(locations.randomElement()?.traffic ?? "High")
                         .font(.footnote)
                         .foregroundColor(Color("InfoTextColor"))
                 }

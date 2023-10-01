@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    //MARK: - BODY
     var body: some View {
-//        TabView {
-//            MapView()
+        TabView {
+            MapView()
+                .tabItem {
+                    Image(systemName: "square.grid.2x2")
+                    Text("Home")
+                }
+            
+            UserDetailView()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
+
+//            LocationView()
 //                .tabItem {
 //                    Image(systemName: "square.grid.2x2")
-//                    Text("Home")
+//                    Text("Location")
 //                }
 //
-////            LocationView()
-////                .tabItem {
-////                    Image(systemName: "square.grid.2x2")
-////                    Text("Location")
-////                }
-////
-////            UserDetailView()
-////                .tabItem {
-////                    Image(systemName: "person.fill")
-////                    Text("Profile")
-////                }
-//        } //: TAB
+            
+//                }
+        } //: TAB
         
-        MapView()
+//        MapView()
     }
 }
 

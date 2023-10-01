@@ -41,23 +41,6 @@ struct MapView: View {
     
     let locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
     
-    //    // test
-    //    let mayurLocations: [ChangingBusLocation] = Bundle.main.decode("changinglocations.json")
-    
-    var searchedLocations: [BusLocation] = []
-    
-    //     FUNCTION
-    mutating func matchLocationSearch() {
-        
-        for location in locations {
-            if location.name.uppercased() == busSearchText.uppercased() {
-                searchedLocations.append(location)
-                
-            }
-        }
-        
-    }
-    
     
     //MARK: - BODY
     var body: some View {
@@ -70,40 +53,12 @@ struct MapView: View {
                 HStack(spacing: 10) {
                     // TITLE
                     Text("Saha Yatri.")
-                        .font(.system(.largeTitle, design: .rounded, weight: .heavy))
+                        .padding(.top, 2)
+                        .font(.system(.title, design: .rounded, weight: .heavy))
                         .foregroundColor(.accentColor)
                         .padding(.leading, 4)
                     
-                    Spacer()
-                    
-                    // LogOut BUTTON
-                    Button {
-                        // Logout action
-                        do {
-                            try Auth.auth().signOut()
-                            
-                            // Show start page when user logs out
-                            isOnboardingViewActive = true
-                            
-                            
-                        } catch let signOutError as NSError {
-                            print("Error signing out: %@", signOutError)
-                        }
-                    } label: {
-                        Text("Log Out")
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 10)
-                            .frame(minWidth: 70, minHeight: 24)
-                            .background(
-                                Capsule()
-                                    .fill(Color.accentColor)
-//                                        .stroke(Color.white, lineWidth: 2)
-                            )
-                    }
-                    
                 } //: HSTACK
-                .padding()
                 
 //                Spacer(minLength: 80)
                 
@@ -141,8 +96,8 @@ struct MapView: View {
                                     
                                     
                                     Button {
-                                        // Some Action
-                                        //                                matchLocationSearch()
+                                        // Some Action to search
+                                        
                                     } label: {
                                         Image(systemName: "magnifyingglass.circle.fill")
                                             .foregroundColor(Color("InfoTextColor"))
@@ -176,17 +131,7 @@ struct MapView: View {
             }
             
         }
-        
-        
-//        .onAppear {
-//            withAnimation(.spring()) {
-//                searchFieldIsAnimating = true
-//            }
-//
-//        }
     }
-    
-    
 }
 
 
