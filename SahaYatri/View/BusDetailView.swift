@@ -12,6 +12,12 @@ struct BusDetailView: View {
     
 //    var location: BusLocation
     var locations: [BusLocation] = Bundle.main.decode("buseslocation.json")
+    @State var randomLocation: BusLocation?
+    
+    var name: String = ""
+    var timeArrival: String = ""
+    var trafficIntensity: String = ""
+    var randomNumbers: [String] = ["2", "7", "10", "11", "10", "22", "15"]
     
 //    @Binding var showInfoPannel: Bool
     
@@ -48,7 +54,7 @@ struct BusDetailView: View {
                     
                     Spacer()
                     
-                    Text("7")
+                    Text(randomNumbers.randomElement()!)
                         .font(.footnote)
                         .foregroundColor(Color("InfoTextColor"))
                 }
@@ -69,6 +75,9 @@ struct BusDetailView: View {
                 }
             }
         })  //: HSTACK
+        .onAppear {
+            randomLocation = locations.randomElement()
+        }
     }
 }
 

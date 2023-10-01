@@ -71,7 +71,7 @@ struct MapView: View {
                                 .onTapGesture {
                                     withAnimation(.spring()) {
                                         hepticFeedback.impactOccurred()
-                                        isInfoPannelVisible = true
+                                        isInfoPannelVisible.toggle()
                                     }
                                     
                                 }
